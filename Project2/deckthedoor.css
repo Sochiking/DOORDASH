@@ -1,0 +1,395 @@
+.montserrat-uniquifier {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* Basic Reset & Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #191919;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Page Layout */
+.page-container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #EB1700; /* DoorDash Red */
+    margin-bottom: 32px;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.main-nav a,
+.sidebar-bottom a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #474747;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover,
+.sidebar-bottom a:hover {
+    background-color: #f7f7f7;
+    color: #191919;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    margin-left: 250px; /* Offset for fixed sidebar */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 40px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.top-bar button {
+    border: none;
+    background-color: transparent;
+    padding: 10px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.top-bar button:hover {
+    background-color: #f0f0f0;
+}
+
+.delivery-toggle {
+    display: flex;
+    background-color: #f0f0f0;
+    border-radius: 24px;
+    padding: 2px;
+}
+.delivery-toggle button {
+    padding: 8px 16px;
+}
+.delivery-toggle button.active {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.btn-signup {
+    background-color: #EB1700;
+    color: white;
+}
+.btn-signup:hover {
+    background-color: #c91400;
+}
+
+.content-wrapper {
+    padding: 0 40px;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 40px 0 60px 0;
+    text-align: center;
+    position: relative;
+    background-image: url('MM_LandingPage_Desktop-min.jpg');
+    background-color: #E6F3FF;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px; 
+    border-radius: 12px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #191919;
+}
+
+.hero-content > p {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.address-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.address-form input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+    border-right: none;
+}
+.address-form input:focus {
+    border-color: #191919;
+}
+
+.address-form button {
+    border: none;
+    background-color: #EB1700;
+    padding: 12px 16px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: 1px solid #EB1700;
+}
+.address-form button:hover {
+    background-color: #c91400;
+}
+
+.saved-address-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.disclaimer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #000;
+    max-width: 90%;
+}
+
+
+/* FAQ Section */
+.faq-section {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 24px 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question .chevron {
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding-bottom 0.3s ease-out;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #474747;
+    padding-bottom: 0;
+}
+
+.faq-answer p, .faq-answer ul {
+    margin-bottom: 16px;
+}
+.faq-answer ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+.faq-answer .inline-link {
+    color: #EB1700;
+    text-decoration: underline;
+}
+
+/* Active state for FAQ item */
+.faq-item.active .faq-question .chevron {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px; /* A large enough value to show all content */
+    padding-bottom: 24px;
+}
+
+
+/* ===== FOOTER STYLES ===== */
+.main-footer {
+    background-color: #fff;
+    padding: 40px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    flex-grow: 1;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column a {
+    font-size: 14px;
+    color: #474747;
+}
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.app-button {
+    background-color: #191919;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.app-button svg {
+    fill: white;
+}
+
+.sub-footer {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-footer-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 12px;
+    color: #767676;
+}
+.sub-footer-left a {
+    color: #767676;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sub-footer-left a:hover {
+    text-decoration: underline;
+}
+.terms-link svg {
+    position: relative;
+    top: -1px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+.social-icons a {
+    color: #767676;
+}
+.social-icons a:hover {
+    color: #191919;
+}

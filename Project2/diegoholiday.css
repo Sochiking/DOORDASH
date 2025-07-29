@@ -1,0 +1,406 @@
+.montserrat-uniquifier {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* --- GLOBAL STYLES & FONTS --- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --dd-red: #eb1700;
+  --text-dark: #191919;
+  --text-light: #474747;
+  --border-color: #e8e8e8;
+  --background-light: #f7f7f7;
+  --background-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--background-white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* --- MAIN PAGE LAYOUT --- */
+.page-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  border-right: 1px solid var(--border-color);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+/* --- SIDEBAR STYLES --- */
+.sidebar-logo {
+  margin-bottom: 24px;
+}
+.sidebar-logo .logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+.sidebar-nav li {
+  margin-bottom: 8px;
+}
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+.sidebar-nav a:hover {
+  background-color: var(--background-light);
+}
+.sidebar-nav a i {
+  font-size: 20px;
+  width: 24px;
+  margin-right: 16px;
+  text-align: center;
+}
+
+.sidebar-login {
+  margin-top: auto; /* Pushes to the bottom */
+}
+
+.sidebar-login a {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.sidebar-login a i {
+  font-size: 24px;
+  margin-right: 16px;
+}
+
+/* --- HEADER STYLES --- */
+.main-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 48px;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  background-color: var(--background-white);
+  z-index: 10;
+}
+
+.address-picker {
+  flex-grow: 1;
+}
+.address-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delivery-toggle {
+  display: flex;
+  background-color: var(--background-light);
+  border-radius: 99px;
+  padding: 4px;
+}
+.toggle-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.toggle-btn.active {
+  background-color: var(--background-white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+.header-actions .icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin: 0 12px;
+}
+.header-actions .signin-btn,
+.header-actions .signup-btn {
+  border: none;
+  border-radius: 99px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.header-actions .signin-btn {
+  background-color: var(--background-light);
+  margin-right: 8px;
+}
+.header-actions .signup-btn {
+  background-color: var(--dd-red);
+  color: white;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  position: relative;
+  background: url("TVLP-LoggedOut-HeaderImage-Template-Mobile-480x346-2.jpg") center center/cover no-repeat;
+  /* --- Fallback color if image fails --- */
+  background-color: #fff;
+}
+/* Dark overlay for better text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+.hero-content h1 {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.hero-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.hero-form .input-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+.hero-form input {
+  width: 100%;
+  padding: 18px 50px 18px 50px;
+  border: none;
+  border-radius: 99px;
+  font-size: 16px;
+}
+.hero-form .arrow-btn {
+  position: absolute;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--dd-red);
+  color: white;
+  font-size: 18px;
+}
+.signin-link-btn {
+  background-color: #fff;
+  border-radius: 20px;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.signin-link-btn i {
+  font-size: 20px;
+}
+
+/* --- HOW IT WORKS SECTION --- */
+.how-it-works {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 48px;
+  background-color: var(--background-white);
+  text-align: center;
+}
+.step {
+  max-width: 300px;
+}
+.step-icon {
+  font-size: 32px;
+  color: var(--dd-red);
+  margin-bottom: 24px;
+}
+.step h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.step p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* --- FAQ SECTION --- */
+.faq {
+  padding: 0 48px 80px 48px;
+  background-color: var(--background-light);
+}
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question i {
+  transition: transform 0.3s ease;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.faq-answer p {
+  padding: 0 24px 24px 24px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+/* Active state for accordion */
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+.faq-item.active .faq-answer {
+  max-height: 150px; /* Adjust if content is taller */
+}
+
+/* --- FOOTER --- */
+.main-footer-bottom {
+  background-color: #110b0b00;
+  color: #000;
+  padding: 60px 48px 30px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #4d4d4d;
+}
+.footer-columns {
+  display: flex;
+  gap: 80px;
+}
+.footer-column h4 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #000;
+}
+.footer-column ul {
+  list-style: none;
+}
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+.footer-column a {
+  color: #000;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+.footer-column a:hover {
+  color: #000;
+}
+.footer-apps a {
+  display: block;
+  margin-bottom: 16px;
+}
+.footer-apps img {
+  height: 40px;
+}
+.footer-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 13px;
+  color: #000;
+}
+.legal-links a {
+  margin-right: 24px;
+}
+.legal-links a:hover {
+  color: blue;
+}
+.social-icons a {
+  color: #d80d8a3f;
+  font-size: 20px;
+  margin-left: 20px;
+}
+.social-icons a:hover {
+  color: #000;
+}
